@@ -1,0 +1,9 @@
+PERSONAJE
+NOMBRE: ALBERTO
+CLASE: GUERRERO
+ATRIBUTOS: 
+Vida: 100 Inteligencia: 67 Rabia: 43 Fuerza: 93
+INVENTARIO: 
+espada
+escudo
+pocion de vida
