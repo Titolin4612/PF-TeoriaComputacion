@@ -1,0 +1,15 @@
+// Otro tipo de comentario
+
+PERSONAJE
+NOMBRE: Peter
+CLASE: GUERRERO
+
+//Atributos personalizados (opcionales)
+ATRIBUTO: Fuerza = 75
+ATRIBUTO: Vida = 120
+// ATRIBUTO:  Suerte = 10
+
+// Inventario personalizado (opcional, si no se pone, usa el de por defecto de la clase)
+INVENTARIO: Espada Legendaria, Armadura de placas, Pocion Mayor
+
+// Puedes tener líneas vacías

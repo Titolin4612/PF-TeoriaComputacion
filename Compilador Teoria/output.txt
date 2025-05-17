@@ -1,0 +1,12 @@
+PERSONAJE
+NOMBRE: Peter
+CLASE: GUERRERO
+ATRIBUTOS:
+  Vida: 120
+  Inteligencia: 17
+  Rabia: 59
+  Fuerza: 75
+INVENTARIO:
+- espada básica
+- escudo de madera
+- pocion de vida simple
