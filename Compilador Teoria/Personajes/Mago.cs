@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using PF_TeoriaComputacion.Personajes;
 
-public class Mago : Personaje
+public class Mago : PersonajeBase
 {
     private Random _rnd = new Random();
 
@@ -10,14 +10,14 @@ public class Mago : Personaje
     public int FuerzaMagica { get; set; }
 
     // Lista Inventario
-    public List<string> Inventario { get; set; }
+    
 
     public Mago()
     {
         Inteligencia = _rnd.Next(1, 100);
         Mana = _rnd.Next(1, 100);
         FuerzaMagica = _rnd.Next(1, 100);
-        Inventario = new List<string> { "baston magico", "libro de hechizos", "pocion de vida avanzada" };
+        Inventario = new List<string> { "Baston magico", "Libro de hechizos", "Pocion de vida avanzada" };
     }
 
     // Método para intentar establecer un atributo por nombre
@@ -35,13 +35,13 @@ public class Mago : Personaje
 
     public override void MostrarAtributos()
     {
-        System.Console.WriteLine("ATRIBUTOS (Mago): ");
+        System.Console.WriteLine("Atributos: ");
         System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Mana: {Mana}, FuerzaMagica: {FuerzaMagica}");
     }
 
     public override void MostrarInventario()
     {
-        System.Console.WriteLine("INVENTARIO (Mago): ");
+        System.Console.WriteLine("Inventario: ");
         if (Inventario.Any())
         {
             foreach (string item in Inventario)

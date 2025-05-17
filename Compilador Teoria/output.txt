@@ -1,12 +1,27 @@
 PERSONAJE
-NOMBRE: Peter
+NOMBRE: Aragon
 CLASE: GUERRERO
 ATRIBUTOS:
-  Vida: 120
-  Inteligencia: 17
-  Rabia: 59
-  Fuerza: 75
+  VIDA: 150
+  INTELIGENCIA: 60
+  RABIA: 85
+  FUERZA: 90
 INVENTARIO:
-- espada básica
-- escudo de madera
-- pocion de vida simple
+  - Espada larga
+  - Escudo de roble
+  - Pocion de curacion
+
+PERSONAJE
+NOMBRE: Mercy
+CLASE: SANADOR
+ATRIBUTOS:
+  VIDA: 100
+  INTELIGENCIA: 96
+  ESPIRITU: 36
+  CURACION: 110
+INVENTARIO:
+  - Orbe sagrado
+  - Vendas
+  - Pocion de espiritu
+  - Amuleto protector
+

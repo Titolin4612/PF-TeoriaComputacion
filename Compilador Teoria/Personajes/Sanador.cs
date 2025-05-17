@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using PF_TeoriaComputacion.Personajes;
 
-public class Guerrero : PersonajeBase
+public class Sanador : PersonajeBase
 {
     private Random _rnd = new Random();
-
-    
-    
-    
-    public int Rabia { get; set; }
-    public int Fuerza { get; set; }
+    public int Espiritu { get; set; }
+    public int Curacion { get; set; }
 
     // Lista Inventario
     
 
-    public Guerrero()
+    public Sanador()
     {
         Inteligencia = _rnd.Next(1, 100);
-        Rabia = _rnd.Next(1, 100);
-        Fuerza = _rnd.Next(1, 100);
-        Inventario = new List<string> { "Espada básica", "Escudo de madera", "Pocion de vida simple" };
+        Espiritu = _rnd.Next(1, 100);
+        Curacion = _rnd.Next(1, 100);
+        Inventario = new List<string> { "Baculo sanador", "Amuleto sagrado", "Posicion de resurreccion" };
     }
 
     // Método para intentar establecer un atributo por nombre
@@ -30,8 +26,8 @@ public class Guerrero : PersonajeBase
         {
             case "VIDA": Vida = valor; return true;
             case "INTELIGENCIA": Inteligencia = valor; return true;
-            case "RABIA": Rabia = valor; return true;
-            case "FUERZA": Fuerza = valor; return true;
+            case "ESPIRITU": Espiritu = valor; return true;
+            case "CURACION": Curacion = valor; return true;
             default: return false; // Atributo no reconocido para esta clase
         }
     }
@@ -39,12 +35,12 @@ public class Guerrero : PersonajeBase
     public override void MostrarAtributos()
     {
         System.Console.WriteLine("Atributos: ");
-        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Rabia: {Rabia}, Fuerza: {Fuerza}");
+        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Espiritu: {Espiritu}, Curacion: {Curacion}");
     }
 
     public override void MostrarInventario()
     {
-        System.Console.WriteLine("Inventario: ");
+        System.Console.WriteLine("Inventarios: ");
         if (Inventario.Any())
         {
             foreach (string item in Inventario)

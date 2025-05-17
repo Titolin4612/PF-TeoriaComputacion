@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using PF_TeoriaComputacion.Personajes;
 
-public class Guerrero : PersonajeBase
+public class Alquimista : PersonajeBase
 {
     private Random _rnd = new Random();
-
-    
-    
-    
-    public int Rabia { get; set; }
-    public int Fuerza { get; set; }
+    public int Destreza { get; set; }
+    public int Ingenio { get; set; }
 
     // Lista Inventario
     
 
-    public Guerrero()
+    public Alquimista()
     {
         Inteligencia = _rnd.Next(1, 100);
-        Rabia = _rnd.Next(1, 100);
-        Fuerza = _rnd.Next(1, 100);
-        Inventario = new List<string> { "Espada básica", "Escudo de madera", "Pocion de vida simple" };
+        Destreza = _rnd.Next(1, 100);
+        Ingenio = _rnd.Next(1, 100);
+        Inventario = new List<string> { "Libro de alquimia", "Frascos magicos", "Caldero portatil" };
     }
 
     // Método para intentar establecer un atributo por nombre
@@ -30,8 +26,8 @@ public class Guerrero : PersonajeBase
         {
             case "VIDA": Vida = valor; return true;
             case "INTELIGENCIA": Inteligencia = valor; return true;
-            case "RABIA": Rabia = valor; return true;
-            case "FUERZA": Fuerza = valor; return true;
+            case "DESTREZA": Destreza = valor; return true;
+            case "INGENIO": Ingenio = valor; return true;
             default: return false; // Atributo no reconocido para esta clase
         }
     }
@@ -39,7 +35,7 @@ public class Guerrero : PersonajeBase
     public override void MostrarAtributos()
     {
         System.Console.WriteLine("Atributos: ");
-        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Rabia: {Rabia}, Fuerza: {Fuerza}");
+        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Destreza: {Destreza}, Ingenio: {Ingenio}");
     }
 
     public override void MostrarInventario()

@@ -2,196 +2,303 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using PF_TeoriaComputacion.Personajes;
 
-public class Parser
+namespace PF_TeoriaComputacion
 {
-    // Configuraciones
-    private readonly string[] _clasesValidas = { "GUERRERO", "ARQUERO", "MAGO", "ESPADACHIN" };
-    private readonly Dictionary<string, bool> _comandosEsperados = new Dictionary<string, bool>
+    public class Parser
     {
-        { "PERSONAJE", false },      // false = no espera valor después de ':'
-        { "NOMBRE", true },         // true = espera valor después de ':'
-        { "CLASE", true },
-        { "ATRIBUTO", true },       // Nuevo: para definir atributos específicos
-        { "INVENTARIO", true }      // Nuevo: para definir inventario
-    };
-
-    // Atributos parser
-    public string NombrePersonaje { get; private set; }
-    public string ClasePersonaje { get; private set; }
-    public Dictionary<string, int> AtributosDefinidos { get; private set; }
-    public List<string> InventarioDefinido { get; private set; }
-    public List<string> Errores { get; private set; }
-
-    // Contador para validacion
-    private Dictionary<string, int> _contadorComandos;
-
-
-    // Constructor
-    public Parser()
-    {
-        Errores = new List<string>();
-        AtributosDefinidos = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); // Case-insensitive para nombres de atributos
-        InventarioDefinido = new List<string>();
-        _contadorComandos = new Dictionary<string, int>();
-    }
-
-
-    public bool ParsearArchivo(string rutaArchivo)
-    {
-        // Reiniciar estado para un nuevo parseo
-        Errores.Clear();
-        AtributosDefinidos.Clear();
-        InventarioDefinido.Clear();
-        NombrePersonaje = null;
-        ClasePersonaje = null;
-        _contadorComandos.Clear();
-        foreach (var cmd in _comandosEsperados.Keys)
+        // Validar comandos
+        private readonly string[] _clasesValidas = { "GUERRERO", "ARQUERO", "MAGO", "ESPADACHIN", "ALQUIMISTA", "DRUIDA", "SANADOR" };
+        private readonly string[] _comandosValidos = { "PERSONAJE", "NOMBRE", "CLASE", "ATRIBUTO", "INVENTARIO" };
+        private readonly Dictionary<string, string[]> _atributosValidos = new()
         {
-            _contadorComandos[cmd] = 0;
-        }
+            { "GUERRERO", new[] { "VIDA", "INTELIGENCIA", "RABIA", "FUERZA" } },
+            { "ARQUERO", new[] { "VIDA", "INTELIGENCIA", "VELOCIDAD", "PRECISION" } }, 
+            { "MAGO", new[] { "VIDA", "INTELIGENCIA", "MANA", "FUERZAMAGICA" } },
+            { "ESPADACHIN", new[] { "VIDA", "INTELIGENCIA", "ESGRIMA", "GOLPECRITICO" } },
+            { "ALQUIMISTA", new[] { "VIDA", "INTELIGENCIA", "DESTREZA", "INGENIO" } },
+            { "DRUIDA", new[] { "VIDA", "INTELIGENCIA", "NATURALEZA", "TRANSFORMACION" } },
+            { "SANADOR", new[] { "VIDA", "INTELIGENCIA", "ESPIRITU", "CURACION" } }
+        };
 
+        // Propiedades
+        public List<PersonajeBase> Personajes { get; private set; } = new List<PersonajeBase>();
+        public List<string> Errores { get; private set; } = new List<string>();
 
-        if (!File.Exists(rutaArchivo))
+        public bool ParsearArchivo(string rutaArchivo)
         {
-            Errores.Add($"Error: El archivo de entrada '{rutaArchivo}' no fue encontrado.");
-            return false;
-        }
+            // Limpiar por si acaso
+            Personajes.Clear();
+            Errores.Clear();
 
-        string[] lineas = File.ReadAllLines(rutaArchivo);
-        bool personajeDeclarado = false;
-
-        int numeroLinea = 0;
-        for (int i = 0; i < lineas.Length; i++)
-        {
-            string lineaActual = lineas[i].Trim();
-            numeroLinea++ ;
-
-            // ANÁLISIS LÉXICO: Ignorar líneas vacías o comentarios
-            if (string.IsNullOrWhiteSpace(lineaActual) || lineaActual.StartsWith("//"))
+            // Verificar que el input exista
+            if (!File.Exists(rutaArchivo))
             {
-                continue; // ANÁLISIS LÉXICO: Ignorar comentarios y líneas vacías
-            }
-
-            // ANÁLISIS LÉXICO: Dividir la línea en clave y valor (si existe)
-            string[] partes = lineaActual.Split(new[] { ':' }, 2); // Dividir solo en el primer ':'
-            string clave = partes[0].Trim().ToUpper();
-            string valor = partes.Length > 1 ? partes[1].Trim() : null;
-
-            // ANÁLISIS SINTÁCTICO y SEMÁNTICO INICIAL
-            if (!_comandosEsperados.ContainsKey(clave))
-            {
-                Errores.Add($"Línea {numeroLinea}: Comando desconocido '{clave}'.");
-                continue;
-            }
-
-            // Validar que el personaje sea el primer comando
-            if (!personajeDeclarado && clave != "PERSONAJE")
-            {
-                Errores.Add($"Línea {numeroLinea}: Se esperaba el comando 'PERSONAJE' al inicio de la definición.");
+                Errores.Add($"Error: El archivo '{rutaArchivo}' no existe.");
                 return false;
             }
-            if (clave == "PERSONAJE")
-            {
-                personajeDeclarado = true;
-            }
-            else if (!personajeDeclarado)
-            {
-                Errores.Add($"Línea {numeroLinea}: El comando '{clave}' no puede aparecer antes de 'PERSONAJE'.");
-                continue;
-            }
 
+            // Atributos
+            string[] lineas = File.ReadAllLines(rutaArchivo);
+            PersonajeBase personaje = null;
+            bool tieneNombre = false;
+            bool tieneClase = false;
+            List<string> nombresUsados = new List<string>();
+            int lineaInicio = 0;
 
-            // Contar ocurrencias de comandos principales (PERSONAJE, NOMBRE, CLASE)
-            if (clave == "PERSONAJE" || clave == "NOMBRE" || clave == "CLASE")
+            // Leer las lineas
+            for (int i = 0; i < lineas.Length; i++)
             {
-                _contadorComandos[clave]++;
-                if (_contadorComandos[clave] > 1)
-                {
-                    Errores.Add($"Línea {numeroLinea}: El comando '{clave}' solo puede aparecer una vez.");
+                string linea = lineas[i].Trim();
+                int numeroLinea = i + 1;
+
+                // Saltar vacios o comentarios
+                if (string.IsNullOrWhiteSpace(linea) || linea.StartsWith("//"))
                     continue;
+
+                // .Split para separar con :
+                string[] partes = linea.Split(new[] { ':' }, 2);
+                string comando = partes[0].Trim().ToUpper();
+                string valor = partes.Length > 1 ? partes[1].Trim() : "";
+
+                // Validar comando
+                if (!_comandosValidos.Contains(comando))
+                {
+                    Errores.Add($"Linea {numeroLinea}: Comando desconocido '{comando}'.");
+                    return false;
+                }
+
+                // Verificar personaje
+                if (comando == "PERSONAJE")
+                {
+                    if (personaje != null)
+                    {
+                        if (!tieneNombre)
+                            Errores.Add($"Linea {lineaInicio}: Falta el comando 'NOMBRE'.");
+                        if (!tieneClase)
+                            Errores.Add($"Linea {lineaInicio}: Falta el comando 'CLASE'.");
+                        if (Errores.Any())
+                            return false;
+                        Personajes.Add(personaje);
+                    }
+
+                    // Resetear pa volver a empezar
+                    personaje = null;
+                    tieneNombre = false;
+                    tieneClase = false;
+                    lineaInicio = numeroLinea;
+                    continue;
+                }
+
+                // Verificar que este el personaje
+                if (lineaInicio == 0)
+                {
+                    Errores.Add($"Linea {numeroLinea}: Se esperaba 'PERSONAJE' primero.");
+                    return false;
+                }
+
+                // Logica comandos
+                if (comando == "NOMBRE")
+                {
+                    if (string.IsNullOrWhiteSpace(valor))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El nombre no puede estar vacío.");
+                        return false;
+                    }
+                    if (nombresUsados.Contains(valor))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El nombre '{valor}' ya está en uso.");
+                        return false;
+                    }
+                    if (tieneNombre)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Solo se permite un 'NOMBRE' por personaje.");
+                        return false;
+                    }
+
+                    nombresUsados.Add(valor);
+
+                    tieneNombre = true;
+
+                    if (personaje != null)
+                        personaje.Nombre = valor;
+                }
+                else if (comando == "CLASE")
+                {
+                    if (string.IsNullOrWhiteSpace(valor))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: La clase no puede estar vacía.");
+                        return false;
+                    }
+                    string claseUpper = valor.ToUpper();
+                    if (!_clasesValidas.Contains(claseUpper))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Clase '{valor}' no válida.");
+                        return false;
+                    }
+                    if (tieneClase)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Solo se permite una 'CLASE' por personaje.");
+                        return false;
+                    }
+                    tieneClase = true;
+                    personaje = CrearPersonaje(claseUpper);
+                    if (tieneNombre)
+                        personaje.Nombre = nombresUsados[nombresUsados.Count - 1];
+                }
+                else if (comando == "ATRIBUTO")
+                {
+                    if (string.IsNullOrWhiteSpace(valor))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El atributo requiere un valor.");
+                        return false;
+                    }
+
+                    // Dividir la cadena del valor del atributo en =
+                    string[] partesAtributo = valor.Split('=');
+
+                    // Verificar que haya exactamente dos partes (nombre y valor)
+                    if (partesAtributo.Length != 2)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Formato incorrecto para ATRIBUTO.");
+                        return false;
+                    }
+
+                    // Obtener nombre y valor y limpiar espacios en blanco
+                    string nombreAtributo = partesAtributo[0].Trim();
+                    string stringValorAtributo = partesAtributo[1].Trim();
+
+                    // Validar que el nombre del atributo no este vacío despues de Trim
+                    if (string.IsNullOrWhiteSpace(nombreAtributo))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El nombre del atributo no puede estar vacío.");
+                        return false;
+                    }
+                    // Validar que el valor del atributo no este vacío despues de Trim
+                    if (string.IsNullOrWhiteSpace(stringValorAtributo))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El valor del atributo '{nombreAtributo}' no puede estar vacío.");
+                        return false;
+                    }
+
+
+                    int valorAtributo;
+                    // Intentar convertir el valor del atributo a un número 
+                    if (!int.TryParse(stringValorAtributo, out valorAtributo))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El valor del atributo '{nombreAtributo}' debe ser un número.");
+                        return false;
+                    }
+
+                    // Verificar que ya se haya definido una CLASE para el personaje
+                    if (personaje == null)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Defina una CLASE antes de intentar asignar un ATRIBUTO.");
+                        return false;
+                    }
+
+                    // Verificar si el atributo es válido para la clase
+                    string clasePersonajeActual = personaje.GetType().Name.ToUpper();
+                    bool atributoValidoParaClase = false;
+                    foreach (string atrValido in _atributosValidos[clasePersonajeActual])
+                    {
+                        if (atrValido.Equals(nombreAtributo, StringComparison.OrdinalIgnoreCase))
+                        {
+                            atributoValidoParaClase = true;
+                            break;
+                        }
+                    }
+
+                    if (!atributoValidoParaClase)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El atributo '{nombreAtributo}' no es válido para la clase '{personaje.GetType().Name}'.");
+                        return false; 
+                    }
+
+                    // Intentar asignar el atributo al personaje
+                    if (!personaje.PonerAtributos(nombreAtributo, valorAtributo))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: No se pudo asignar el atributo '{nombreAtributo}' con valor '{valorAtributo}'. verifique las reglas del personaje.");
+                        return false; 
+                    }
+                }
+                else if (comando == "INVENTARIO")
+                {
+                    if (string.IsNullOrWhiteSpace(valor))
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El inventario requiere items separados por comas.");
+                        return false; 
+                    }
+
+                    string[] itemsSinProcesar = valor.Split(',');
+                    List<string> itemsLimpios = new List<string>();
+
+                    for (int k = 0; k < itemsSinProcesar.Length; k++)
+                    {
+                        string itemActual = itemsSinProcesar[k].Trim();
+                        if (!string.IsNullOrWhiteSpace(itemActual))
+                        {
+                            itemsLimpios.Add(itemActual);
+                        }
+                    }
+
+                    if (itemsLimpios.Count == 0) 
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El inventario no contiene items validos despues de procesar '{valor}'.");
+                        return false; 
+                    }
+
+                    if (personaje == null)
+                    {
+                        Errores.Add($"Linea {numeroLinea}: Define 'CLASE' antes de intentar asignar un 'INVENTARIO'.");
+                        return false; 
+                    }
+
+                    // Limpiar el inventario actual y añadir los nuevos objetos
+                    personaje.Inventario.Clear();
+                    // Añadir cada item limpio a la lista de inventario del personaje
+                    for (int k = 0; k < itemsLimpios.Count; k++)
+                    {
+                        personaje.Inventario.Add(itemsLimpios[k]);
+                    }
+
                 }
             }
 
+            // Validar y almacenar el personaje
+            if (personaje != null)
+            {
+                if (!tieneNombre)
+                    Errores.Add($"Linea {lineaInicio}: Falta el comando 'NOMBRE'.");
+                if (!tieneClase)
+                    Errores.Add($"Linea {lineaInicio}: Falta el comando 'CLASE'.");
+                if (Errores.Any())
+                    return false;
+                Personajes.Add(personaje);
+            }
 
-            // Validar si el comando esperaba un valor y si se proporcionó
-            if (_comandosEsperados[clave] && string.IsNullOrWhiteSpace(valor))
+            // Si no hay perosajes pues false
+            if (!Personajes.Any() && lineas.Any(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("//")))
             {
-                Errores.Add($"Línea {numeroLinea}: El comando '{clave}' requiere un valor después de ':'.");
-                continue;
-            }
-            if (!_comandosEsperados[clave] && !string.IsNullOrWhiteSpace(valor))
-            {
-                Errores.Add($"Línea {numeroLinea}: El comando '{clave}' no espera un valor, pero se proporcionó '{valor}'.");
-                continue;
+                Errores.Add("No se encontraron personajes.");
+                return false;
             }
 
-            // Procesar comandos específicos
-            switch (clave)
-            {
-                case "PERSONAJE":
-                    // Ya manejado por la validación de unicidad y orden
-                    break;
-                case "NOMBRE":
-                    NombrePersonaje = valor; // ANÁLISIS SEMÁNTICO: Asignar nombre
-                    break;
-                case "CLASE":
-                    if (_clasesValidas.Contains(valor.ToUpper()))
-                    {
-                        ClasePersonaje = valor.ToUpper(); // ANÁLISIS SEMÁNTICO: Asignar clase
-                    }
-                    else
-                    {
-                        Errores.Add($"Línea {numeroLinea}: Clase '{valor}' no válida. Clases válidas: {string.Join(", ", _clasesValidas)}.");
-                    }
-                    break;
-                case "ATRIBUTO": // ATRIBUTO: Fuerza=10 o ATRIBUTO: Vida = 100
-                    string[] partesAtributo = valor.Split(new[] { '=' }, 2);
-                    if (partesAtributo.Length == 2)
-                    {
-                        string nombreAtributo = partesAtributo[0].Trim();
-                        if (int.TryParse(partesAtributo[1].Trim(), out int valorAtributo))
-                        {
-                            // ANÁLISIS SEMÁNTICO: Guardar atributo definido
-                            // La validación de si el atributo es válido para la clase se hará después,
-                            // una vez que sepamos la clase.
-                            AtributosDefinidos[nombreAtributo] = valorAtributo;
-                        }
-                        else
-                        {
-                            Errores.Add($"Línea {numeroLinea}: Valor inválido para el atributo '{nombreAtributo}'. Se esperaba un número.");
-                        }
-                    }
-                    else
-                    {
-                        Errores.Add($"Línea {numeroLinea}: Formato incorrecto para ATRIBUTO. Se esperaba 'NombreAtributo = Valor'. Ejemplo: Fuerza = 10");
-                    }
-                    break;
-                case "INVENTARIO": // INVENTARIO: Espada, Escudo, Pocion
-                    string[] items = valor.Split(',').Select(item => item.Trim()).Where(item => !string.IsNullOrWhiteSpace(item)).ToArray();
-                    if (items.Any())
-                    {
-                        InventarioDefinido.AddRange(items); // ANÁLISIS SEMÁNTICO: Guardar ítems
-                    }
-                    else
-                    {
-                        Errores.Add($"Línea {numeroLinea}: El comando INVENTARIO no contenía ítems válidos.");
-                    }
-                    break;
-            }
+            return true;
         }
 
-        // Validaciones Sintácticas y Semánticas
-        if (_contadorComandos["PERSONAJE"] == 0 && lineas.Any(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("//")))
+        // Instanciar los personajes
+        private PersonajeBase CrearPersonaje(string clase)
         {
-            Errores.Add("Error: El comando 'PERSONAJE' es obligatorio y no se encontró al inicio.");
+            if (clase == "GUERRERO") return new Guerrero();
+            if (clase == "ARQUERO") return new Arquero();
+            if (clase == "MAGO") return new Mago();
+            if (clase == "ESPADACHIN") return new Espadachin();
+            if (clase == "ALQUIMISTA") return new Alquimista();
+            if (clase == "DRUIDA") return new Druida();
+            if (clase == "SANADOR") return new Sanador();
+            throw new Exception($"Clase no valida: {clase}");
         }
-        if (personajeDeclarado) // Solo validar si se declaró PERSONAJE
-        {
-            if (_contadorComandos["NOMBRE"] == 0) Errores.Add("Error: El comando 'NOMBRE' es obligatorio y no se encontró.");
-            if (_contadorComandos["CLASE"] == 0) Errores.Add("Error: El comando 'CLASE' es obligatorio y no se encontró.");
-        }
-
-        return !Errores.Any();
     }
 }

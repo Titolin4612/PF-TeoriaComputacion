@@ -3,125 +3,153 @@ using System.IO;
 using System.Linq;
 using PF_TeoriaComputacion.Personajes;
 
-public class Program
+namespace PF_TeoriaComputacion
 {
-    private static readonly string _baseProyecto = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName ?? throw new Exception("No se pudo determinar el directorio raíz del proyecto.");
-    private static readonly string _rutaArchivoInput = Path.Combine(_baseProyecto, "input.txt");
-    private static readonly string _rutaArchivoOutput = Path.Combine(_baseProyecto, "output.txt");
-
-    static void Main(string[] args)
+    public class Program
     {
-        Parser parser = new Parser();
+        private static readonly string _baseProyecto = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName
+            ?? throw new InvalidOperationException("No se pudo determinar el directorio raíz del proyecto.");
+        private static readonly string _rutaArchivoInput = Path.Combine(_baseProyecto, "input.txt");
+        private static readonly string _rutaArchivoOutput = Path.Combine(_baseProyecto, "output.txt");
 
-        Console.WriteLine($"Intentando parsear el archivo: {_rutaArchivoInput}");
-        bool exitoParseo = parser.ParsearArchivo(_rutaArchivoInput);
-
-        if (exitoParseo)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Parseo exitoso.");
-            Console.WriteLine($"Nombre: {parser.NombrePersonaje}");
-            Console.WriteLine($"Clase: {parser.ClasePersonaje}");
+            Console.WriteLine($"Procesando archivo: {_rutaArchivoInput}");
 
-            // Crear el personaje
-            Personaje personaje = null; 
-
-            switch (parser.ClasePersonaje)
+            // Mirar si existe el archivo
+            if (!File.Exists(_rutaArchivoInput))
             {
-                case "GUERRERO":
-                    personaje = new Guerrero();
-                    break;
-                case "MAGO":
-                    personaje = new Mago();
-                    break;
-                case "ARQUERO":
-                    personaje = new Arquero();
-                    break;
-                case "Espadachin":
-                    personaje = new Espadachin();
-                    break;
+                Console.WriteLine($"Error, No se encontro el archivo en: {_rutaArchivoInput}");
+                return;
             }
 
-            if (personaje != null)
+            if (!File.ReadAllLines(_rutaArchivoInput).Any())
             {
-                // ANÁLISIS SEMÁNTICO: Verificar si los atributos son válidos para la clase y aplicarlos.
-                foreach (var p in parser.AtributosDefinidos)
+                Console.WriteLine($"\n\nError, Archivo vacio");
+                return;
+            }
+
+            Parser parser = new Parser();
+            bool bien = parser.ParsearArchivo(_rutaArchivoInput);
+
+            if (bien)
+            {
+                Console.WriteLine("\nParseo bien. Personajes creados:");
+                foreach (var personaje in parser.Personajes)
                 {
-                    bool aplicado = personaje.PonerAtributos(p.Key, p.Value);
-                    if (!aplicado)
+                    Console.WriteLine($"\nNombre: {personaje.Nombre} - Clase: {personaje.GetType().Name}");
+                    personaje.MostrarAtributos();
+                    personaje.MostrarInventario();
+                }
+
+                try
+                {
+                    EscribirArchivo(parser.Personajes);
+                    Console.WriteLine($"\nResultados escritos en: {_rutaArchivoOutput}");
+                }
+                catch (IOException ex)
+                {
+                    Console.WriteLine($"\nError al escribir en '{_rutaArchivoOutput}': {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nErrore, No se hay personajes:");
+                foreach (string error in parser.Errores)
+                {
+                    Console.WriteLine(error);
+                }
+                Console.WriteLine("\nCorrige los errores en input.txt y vuelva a hacerle.");
+            }
+        }
+
+        private static void EscribirArchivo(List<PersonajeBase> personajes)
+        {
+            using (StreamWriter sw = new StreamWriter(_rutaArchivoOutput))
+            {
+                foreach (var personaje in personajes)
+                {
+                    sw.WriteLine("PERSONAJE");
+                    sw.WriteLine($"NOMBRE: {personaje.Nombre}");
+                    sw.WriteLine($"CLASE: {personaje.GetType().Name.ToUpper()}");
+                    sw.WriteLine("ATRIBUTOS:");
+                    switch (personaje)
                     {
-                        Console.WriteLine($"Advertencia Semántica: El atributo '{p.Key}' no es válido o no se pudo aplicar a la clase {parser.ClasePersonaje}.");
-                        // Podrías añadir esto a una lista de advertencias si quieres
+                        case Guerrero p:
+                            var guerrero = (Guerrero)personaje;
+                            sw.WriteLine($"  VIDA: {guerrero.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {guerrero.Inteligencia}");
+                            sw.WriteLine($"  RABIA: {guerrero.Rabia}");
+                            sw.WriteLine($"  FUERZA: {guerrero.Fuerza}");
+                            break;
+
+                        case Arquero p:
+                            var arquero = (Arquero)personaje;
+                            sw.WriteLine($"  VIDA: {arquero.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {arquero.Inteligencia}");
+                            sw.WriteLine($"  VELOCIDAD: {arquero.Velocidad}");
+                            sw.WriteLine($"  PRECISION: {arquero.Precision}");
+                            break;
+
+                        case Mago p:
+                            var mago = (Mago)personaje;
+                            sw.WriteLine($"  VIDA: {mago.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {mago.Inteligencia}");
+                            sw.WriteLine($"  MANA: {mago.Mana}");
+                            sw.WriteLine($"  FUERZAMAGICA: {mago.FuerzaMagica}");
+                            break;
+
+                        case Espadachin p:
+                            var espadachin = (Espadachin)personaje;
+                            sw.WriteLine($"  VIDA: {espadachin.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {espadachin.Inteligencia}");
+                            sw.WriteLine($"  ESGRIMA: {espadachin.Esgrima}");
+                            sw.WriteLine($"  GOLPECRITICO: {espadachin.GolpeCritico}");
+                            break;
+
+                        case Alquimista p:
+                            var alquimista = (Alquimista)personaje;
+                            sw.WriteLine($"  VIDA: {alquimista.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {alquimista.Inteligencia}");
+                            sw.WriteLine($"  DESTREZA: {alquimista.Destreza}");
+                            sw.WriteLine($"  INGENIO: {alquimista.Ingenio}");
+                            break;
+
+                        case Druida p:
+                            var druida = (Druida)personaje;
+                            sw.WriteLine($"  VIDA: {druida.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {druida.Inteligencia}");
+                            sw.WriteLine($"  NATURALEZA: {druida.Naturaleza}");
+                            sw.WriteLine($"  TRANSFORMACION: {druida.Transformacion}");
+                            break;
+
+                        case Sanador p:
+                            var sanador = (Sanador)personaje;
+                            sw.WriteLine($"  VIDA: {sanador.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {sanador.Inteligencia}");
+                            sw.WriteLine($"  ESPIRITU: {sanador.Espiritu}");
+                            sw.WriteLine($"  CURACION: {sanador.Curacion}");
+                            break;
+
+                        default:
+                            sw.WriteLine($"  VIDA: {personaje.Vida}");
+                            sw.WriteLine($"  INTELIGENCIA: {personaje.Inteligencia}");
+                            break;
                     }
+                    sw.WriteLine("INVENTARIO:");
+                    if (personaje.Inventario.Any())
+                    {
+                        foreach (var item in personaje.Inventario)
+                        {
+                            sw.WriteLine($"  - {item}");
+                        }
+                    }
+                    else
+                    {
+                        sw.WriteLine("  Vacío");
+                    }
+                    sw.WriteLine();
                 }
-
-                // Aplicar inventario definido (si se especificó, reemplaza el por defecto)
-                if (parser.InventarioDefinido.Any())
-                {
-                    personaje.Inventario = parser.InventarioDefinido;
-                }
-
-                Console.WriteLine("\n--- Información del Personaje Creado ---");
-                // Mostrar Info en Consola
-                System.Console.WriteLine($"PERSONAJE: {parser.NombrePersonaje} ({parser.ClasePersonaje})");
-                personaje.MostrarAtributos();
-                personaje.MostrarInventario();
-
-                // Escribir en Archivo
-                EscribirArchivo(personaje, parser.NombrePersonaje, parser.ClasePersonaje);
-                Console.WriteLine($"\nInformación del personaje escrita en: {_rutaArchivoOutput}");
-            }
-        }
-        else
-        {
-            Console.WriteLine("\nErrores durante el parseo:");
-            foreach (string error in parser.Errores)
-            {
-                Console.WriteLine(error);
-            }
-        }
-    }
-
-    public static void EscribirArchivo(dynamic personaje, string nombre, string clase)
-    {
-        using (StreamWriter sw = new StreamWriter(_rutaArchivoOutput))
-        {
-            sw.WriteLine("PERSONAJE"); // Ya no se lee del input, se escribe directamente
-            sw.WriteLine($"NOMBRE: {nombre}");
-            sw.WriteLine($"CLASE: {clase}");
-
-            // Simplificado usando las propiedades públicas directamente
-            if (clase.Equals("GUERRERO"))
-            {
-                var p = (Guerrero)personaje;
-                sw.WriteLine("ATRIBUTOS:");
-                sw.WriteLine($"  Vida: {p.Vida}");
-                sw.WriteLine($"  Inteligencia: {p.Inteligencia}");
-                sw.WriteLine($"  Rabia: {p.Rabia}");
-                sw.WriteLine($"  Fuerza: {p.Fuerza}");
-                sw.WriteLine("INVENTARIO:");
-                foreach (var item in p.Inventario) sw.WriteLine($"- {item}");
-            }
-            else if (clase.Equals("MAGO"))
-            {
-                var p = (Mago)personaje;
-                sw.WriteLine("ATRIBUTOS:");
-                sw.WriteLine($"  Vida: {p.Vida}");
-                sw.WriteLine($"  Inteligencia: {p.Inteligencia}");
-                sw.WriteLine($"  Mana: {p.Mana}");
-                sw.WriteLine($"  Fuerza Magica: {p.FuerzaMagica}");
-                sw.WriteLine("INVENTARIO:");
-                foreach (var item in p.Inventario) sw.WriteLine($"- {item}");
-            }
-            else if (clase.Equals("ARQUERO"))
-            {
-                var p = (Arquero)personaje;
-                sw.WriteLine("ATRIBUTOS:");
-                sw.WriteLine($"  Vida: {p.Vida}");
-                sw.WriteLine($"  Inteligencia: {p.Inteligencia}");
-                sw.WriteLine($"  Precision: {p.Precision}");
-                sw.WriteLine($"  Velocidad: {p.Velocidad}");
-                sw.WriteLine("INVENTARIO:");
-                foreach (var item in p.Inventario) sw.WriteLine($"- {item}");
             }
         }
     }

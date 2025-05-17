@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using PF_TeoriaComputacion.Personajes;
 
-public class Arquero : Personaje
+public class Arquero : PersonajeBase
 {
     private Random _rnd = new Random();
-
-    
-    
-    
     public int Velocidad { get; set; }
     public int Precision { get; set; }
 
     // Lista Inventario
-    public List<string> Inventario { get; set; }
+    
 
     public Arquero()
     {
@@ -31,20 +27,20 @@ public class Arquero : Personaje
             case "VIDA": Vida = valor; return true;
             case "INTELIGENCIA": Inteligencia = valor; return true;
             case "VELOCIDAD": Velocidad = valor; return true;
-            case "Precision": Precision = valor; return true;
+            case "PRECISION": Precision = valor; return true;
             default: return false; // Atributo no reconocido para esta clase
         }
     }
 
     public override void MostrarAtributos()
     {
-        System.Console.WriteLine("ATRIBUTOS (Arquero): ");
+        System.Console.WriteLine("Atributos: ");
         System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Velocidad: {Velocidad}, Precision: {Precision}");
     }
 
     public override void MostrarInventario()
     {
-        System.Console.WriteLine("INVENTARIO (Arquero): ");
+        System.Console.WriteLine("Inventario: ");
         if (Inventario.Any())
         {
             foreach (string item in Inventario)

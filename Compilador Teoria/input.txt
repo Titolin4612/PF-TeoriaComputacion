@@ -1,15 +1,16 @@
-// Otro tipo de comentario
-
+// Personaje #1
 PERSONAJE
-NOMBRE: Peter
+NOMBRE: Aragon
 CLASE: GUERRERO
+ATRIBUTO: Vida = 150
+ATRIBUTO: Fuerza = 90
+ATRIBUTO: Inteligencia = 60
+ATRIBUTO: Rabia = 85
+INVENTARIO: Espada larga, Escudo de roble, Pocion de curacion
 
-//Atributos personalizados (opcionales)
-ATRIBUTO: Fuerza = 75
-ATRIBUTO: Vida = 120
-// ATRIBUTO:  Suerte = 10
-
-// Inventario personalizado (opcional, si no se pone, usa el de por defecto de la clase)
-INVENTARIO: Espada Legendaria, Armadura de placas, Pocion Mayor
-
-// Puedes tener líneas vacías
+// Personaje #2
+PERSONAJE
+NOMBRE: Mercy
+CLASE: Sanador
+ATRIBUTO: Curacion = 110
+INVENTARIO: Orbe sagrado, Vendas, Pocion de espiritu, Amuleto protector

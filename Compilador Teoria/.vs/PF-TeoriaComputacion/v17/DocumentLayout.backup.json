@@ -3,40 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\espadachin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\espadachin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\arquero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\arquero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\logica\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:logica\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\output.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\output.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\sanador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\sanador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\guerrero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\guerrero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\personajebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\personajebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\mago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\mago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\personaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\personaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\guerrero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\guerrero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\espadachin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\espadachin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\druida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\druida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\arquero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\arquero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\personajes\\alquimista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:personajes\\alquimista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\teor\u00EDa de la computaci\u00F3n\\proyecto final tc\\pf-teoriacomputacion\\compilador teoria\\logica\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2020A3-7DBD-4C22-B380-62F2DD33282F}|PF-TeoriaComputacion.csproj|solutionrelative:logica\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,119 +78,158 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "output.txt",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\output.txt",
               "RelativeDocumentMoniker": "output.txt",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\output.txt",
               "RelativeToolTip": "output.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-17T02:53:28.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "input.txt",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\input.txt",
-              "RelativeDocumentMoniker": "input.txt",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\input.txt",
-              "RelativeToolTip": "input.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-17T02:52:26.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:49:45.254Z",
+              "WhenOpened": "2025-05-17T23:11:50.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Parser.cs",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Logica\\Parser.cs",
-              "RelativeDocumentMoniker": "Logica\\Parser.cs",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Logica\\Parser.cs",
-              "RelativeToolTip": "Logica\\Parser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMEAAAAAAAAAAAAAAA==",
+              "Title": "Sanador.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Sanador.cs",
+              "RelativeDocumentMoniker": "Personajes\\Sanador.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Sanador.cs",
+              "RelativeToolTip": "Personajes\\Sanador.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wCAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:41:13.518Z",
+              "WhenOpened": "2025-05-17T23:07:26.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Espadachin.cs",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Espadachin.cs",
-              "RelativeDocumentMoniker": "Personajes\\Espadachin.cs",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Espadachin.cs",
-              "RelativeToolTip": "Personajes\\Espadachin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:41:09.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Guerrero.cs",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Guerrero.cs",
-              "RelativeDocumentMoniker": "Personajes\\Guerrero.cs",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Guerrero.cs",
-              "RelativeToolTip": "Personajes\\Guerrero.cs",
+              "DocumentIndex": 3,
+              "Title": "PersonajeBase.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\PersonajeBase.cs",
+              "RelativeDocumentMoniker": "Personajes\\PersonajeBase.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\PersonajeBase.cs",
+              "RelativeToolTip": "Personajes\\PersonajeBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:41:09.028Z",
+              "WhenOpened": "2025-05-17T23:07:24.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Mago.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Mago.cs",
               "RelativeDocumentMoniker": "Personajes\\Mago.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Mago.cs",
               "RelativeToolTip": "Personajes\\Mago.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:40:01.57Z",
+              "WhenOpened": "2025-05-17T23:07:10.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Guerrero.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Guerrero.cs",
+              "RelativeDocumentMoniker": "Personajes\\Guerrero.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Guerrero.cs",
+              "RelativeToolTip": "Personajes\\Guerrero.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwC4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T23:06:55.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Espadachin.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Espadachin.cs",
+              "RelativeDocumentMoniker": "Personajes\\Espadachin.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Espadachin.cs",
+              "RelativeToolTip": "Personajes\\Espadachin.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowC0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T23:06:42.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Druida.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Druida.cs",
+              "RelativeDocumentMoniker": "Personajes\\Druida.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Druida.cs",
+              "RelativeToolTip": "Personajes\\Druida.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wCoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T23:06:00.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Personaje.cs",
-              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Personaje.cs",
-              "RelativeDocumentMoniker": "Personajes\\Personaje.cs",
-              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Personaje.cs",
-              "RelativeToolTip": "Personajes\\Personaje.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:39:58.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Arquero.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Arquero.cs",
               "RelativeDocumentMoniker": "Personajes\\Arquero.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Arquero.cs",
               "RelativeToolTip": "Personajes\\Arquero.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowCoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:39:57.766Z",
+              "WhenOpened": "2025-05-17T23:05:45.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Alquimista.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Alquimista.cs",
+              "RelativeDocumentMoniker": "Personajes\\Alquimista.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Personajes\\Alquimista.cs",
+              "RelativeToolTip": "Personajes\\Alquimista.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwCoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T23:04:59.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "input.txt",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\input.txt",
+              "RelativeDocumentMoniker": "input.txt",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\input.txt",
+              "RelativeToolTip": "input.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-05-17T22:57:00.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T22:41:09.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Parser.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Logica\\Parser.cs",
+              "RelativeDocumentMoniker": "Logica\\Parser.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Teor\u00EDa de la computaci\u00F3n\\Proyecto Final TC\\PF-TeoriaComputacion\\Compilador Teoria\\Logica\\Parser.cs",
+              "RelativeToolTip": "Logica\\Parser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T21:01:38.963Z",
               "EditorCaption": ""
             }
           ]

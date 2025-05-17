@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace PF_TeoriaComputacion.Personajes
 {
-    public class Personaje
+    public class PersonajeBase
     {
-
+        public string Nombre { get; set; }
         public int Vida { get; set; } = 100;
         public int Inteligencia { get; set; }
-
         public List<string> Inventario { get; set; }
-
 
         public virtual bool PonerAtributos(string nombreAtributo, int valor)
         {

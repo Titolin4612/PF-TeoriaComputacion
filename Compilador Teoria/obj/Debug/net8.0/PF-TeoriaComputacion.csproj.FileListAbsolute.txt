@@ -12,3 +12,4 @@ C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Teoría de la co
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Teoría de la computación\Proyecto Final TC\PF-TeoriaComputacion\Compilador Teoria\obj\Debug\net8.0\PF-TeoriaComputacion.pdb
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Teoría de la computación\Proyecto Final TC\PF-TeoriaComputacion\Compilador Teoria\obj\Debug\net8.0\PF-TeoriaComputacion.genruntimeconfig.cache
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Teoría de la computación\Proyecto Final TC\PF-TeoriaComputacion\Compilador Teoria\obj\Debug\net8.0\ref\PF-TeoriaComputacion.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Teoría de la computación\Proyecto Final TC\PF-TeoriaComputacion\Compilador Teoria\obj\Debug\net8.0\PF-TeoriaComputacion.sourcelink.json
