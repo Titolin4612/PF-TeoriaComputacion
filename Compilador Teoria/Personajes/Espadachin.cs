@@ -37,23 +37,23 @@ public class Espadachin : PersonajeBase
 
     public override void MostrarAtributos()
     {
-        System.Console.WriteLine("Atributos: ");
-        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Esgrima: {Esgrima}, GolpeCritico: {GolpeCritico}");
+        Console.WriteLine("Atributos: ");
+        Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Esgrima: {Esgrima}, GolpeCritico: {GolpeCritico}");
     }
 
     public override void MostrarInventario()
     {
-        System.Console.WriteLine("Inventario: ");
+        Console.WriteLine("Inventario: ");
         if (Inventario.Any())
         {
             foreach (string item in Inventario)
             {
-                System.Console.WriteLine($"- {item}");
+                Console.WriteLine($"- {item}");
             }
         }
         else
         {
-            System.Console.WriteLine("Vacío");
+            Console.WriteLine("Vacío");
         }
     }
 }

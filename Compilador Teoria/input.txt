@@ -2,8 +2,8 @@
 PERSONAJE
 NOMBRE: Aragon
 CLASE: GUERRERO
-ATRIBUTO: Vida = 150
-ATRIBUTO: Fuerza = 90
+ATRIBUTO: Vida = 100
+ATRIBUTO: Fuerza = 100
 ATRIBUTO: Inteligencia = 60
 ATRIBUTO: Rabia = 85
 INVENTARIO: Espada larga, Escudo de roble, Pocion de curacion

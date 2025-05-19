@@ -182,13 +182,18 @@ namespace PF_TeoriaComputacion
                         return false;
                     }
 
-
                     int valorAtributo;
                     // Intentar convertir el valor del atributo a un número 
                     if (!int.TryParse(stringValorAtributo, out valorAtributo))
                     {
                         Errores.Add($"Linea {numeroLinea}: El valor del atributo '{nombreAtributo}' debe ser un número.");
                         return false;
+                    }
+
+                    if (valorAtributo <= 0) 
+                    {
+                        Errores.Add($"Linea {numeroLinea}: El valor del atributo '{nombreAtributo}' debe ser un número positivo (se encontró '{valorAtributo}').");
+                        return false; 
                     }
 
                     // Verificar que ya se haya definido una CLASE para el personaje

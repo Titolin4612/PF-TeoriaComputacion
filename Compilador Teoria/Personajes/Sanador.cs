@@ -9,8 +9,6 @@ public class Sanador : PersonajeBase
     public int Curacion { get; set; }
 
     // Lista Inventario
-    
-
     public Sanador()
     {
         Inteligencia = _rnd.Next(1, 100);
@@ -34,23 +32,23 @@ public class Sanador : PersonajeBase
 
     public override void MostrarAtributos()
     {
-        System.Console.WriteLine("Atributos: ");
-        System.Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Espiritu: {Espiritu}, Curacion: {Curacion}");
+        Console.WriteLine("Atributos: ");
+        Console.WriteLine($"Vida: {Vida}, Inteligencia: {Inteligencia}, Espiritu: {Espiritu}, Curacion: {Curacion}");
     }
 
     public override void MostrarInventario()
     {
-        System.Console.WriteLine("Inventarios: ");
+        Console.WriteLine("Inventarios: ");
         if (Inventario.Any())
         {
             foreach (string item in Inventario)
             {
-                System.Console.WriteLine($"- {item}");
+                Console.WriteLine($"- {item}");
             }
         }
         else
         {
-            System.Console.WriteLine("Vacío");
+            Console.WriteLine("Vacío");
         }
     }
 }
