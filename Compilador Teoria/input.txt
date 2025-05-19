@@ -1,5 +1,5 @@
 // Personaje #1
-PERSONAJE
+PERSONAJE:
 NOMBRE: Aragon
 CLASE: GUERRERO
 ATRIBUTO: Vida = 100
@@ -9,7 +9,7 @@ ATRIBUTO: Rabia = 85
 INVENTARIO: Espada larga, Escudo de roble, Pocion de curacion
 
 // Personaje #2
-PERSONAJE
+PERSONAJE:
 NOMBRE: Mercy
 CLASE: Sanador
 ATRIBUTO: Curacion = 110

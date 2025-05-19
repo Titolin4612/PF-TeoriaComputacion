@@ -155,27 +155,27 @@ namespace PF_TeoriaComputacion
                         return false;
                     }
 
-                    // Dividir la cadena del valor del atributo en =
+                    // Dividir la cadena en =
                     string[] partesAtributo = valor.Split('=');
 
-                    // Verificar que haya exactamente dos partes (nombre y valor)
+                    // Verificar que haya exactamente dos partes pa nombre y pues pa valor
                     if (partesAtributo.Length != 2)
                     {
                         Errores.Add($"Linea {numeroLinea}: Formato incorrecto para ATRIBUTO.");
                         return false;
                     }
 
-                    // Obtener nombre y valor y limpiar espacios en blanco
+                    // Sacar el nombre y valor y limpiar espacios en blanco
                     string nombreAtributo = partesAtributo[0].Trim();
                     string stringValorAtributo = partesAtributo[1].Trim();
 
-                    // Validar que el nombre del atributo no este vacío despues de Trim
+                    // Validar que el nombre del atributo no este vacio
                     if (string.IsNullOrWhiteSpace(nombreAtributo))
                     {
                         Errores.Add($"Linea {numeroLinea}: El nombre del atributo no puede estar vacío.");
                         return false;
                     }
-                    // Validar que el valor del atributo no este vacío despues de Trim
+                    // Validar que el valor del atributo no este vacio
                     if (string.IsNullOrWhiteSpace(stringValorAtributo))
                     {
                         Errores.Add($"Linea {numeroLinea}: El valor del atributo '{nombreAtributo}' no puede estar vacío.");
@@ -196,14 +196,14 @@ namespace PF_TeoriaComputacion
                         return false; 
                     }
 
-                    // Verificar que ya se haya definido una CLASE para el personaje
+                    // Verificar que ya se haya definido una clase pa el personaje
                     if (personaje == null)
                     {
                         Errores.Add($"Linea {numeroLinea}: Defina una CLASE antes de intentar asignar un ATRIBUTO.");
                         return false;
                     }
 
-                    // Verificar si el atributo es válido para la clase
+                    // Verificar si el atributo es válido pa la clase
                     string clasePersonajeActual = personaje.GetType().Name.ToUpper();
                     bool atributoValidoParaClase = false;
                     foreach (string atrValido in _atributosValidos[clasePersonajeActual])
@@ -221,7 +221,7 @@ namespace PF_TeoriaComputacion
                         return false; 
                     }
 
-                    // Intentar asignar el atributo al personaje
+                    // Intentar ponerle el atributo al personaje
                     if (!personaje.PonerAtributos(nombreAtributo, valorAtributo))
                     {
                         Errores.Add($"Linea {numeroLinea}: No se pudo asignar el atributo '{nombreAtributo}' con valor '{valorAtributo}'. verifique las reglas del personaje.");
@@ -260,9 +260,8 @@ namespace PF_TeoriaComputacion
                         return false; 
                     }
 
-                    // Limpiar el inventario actual y añadir los nuevos objetos
                     personaje.Inventario.Clear();
-                    // Añadir cada item limpio a la lista de inventario del personaje
+                    // Añadir cada item limpio a la lista de inventario del pj
                     for (int k = 0; k < itemsLimpios.Count; k++)
                     {
                         personaje.Inventario.Add(itemsLimpios[k]);

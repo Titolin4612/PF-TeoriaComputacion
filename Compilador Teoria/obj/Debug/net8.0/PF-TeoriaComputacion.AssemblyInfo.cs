@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PF-TeoriaComputacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef07de6480cc1750253aefa2cf57dbf3da3484e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34271c98aaa58de23bd6bf99d67ec3155cc34ba7")]
 [assembly: System.Reflection.AssemblyProductAttribute("PF-TeoriaComputacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PF-TeoriaComputacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
