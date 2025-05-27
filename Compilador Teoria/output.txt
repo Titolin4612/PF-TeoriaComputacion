@@ -1,0 +1,27 @@
+PERSONAJE
+NOMBRE: Aragon
+CLASE: GUERRERO
+ATRIBUTOS:
+  VIDA: 100
+  INTELIGENCIA: 60
+  RABIA: 85
+  FUERZA: 100
+INVENTARIO:
+  - Espada larga
+  - Escudo de roble
+  - Pocion de curacion
+
+PERSONAJE
+NOMBRE: Mercy
+CLASE: SANADOR
+ATRIBUTOS:
+  VIDA: 100
+  INTELIGENCIA: 30
+  ESPIRITU: 7
+  CURACION: 110
+INVENTARIO:
+  - Orbe sagrado
+  - Vendas
+  - Pocion de espiritu
+  - Amuleto protector
+

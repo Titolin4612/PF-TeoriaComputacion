@@ -1,0 +1,16 @@
+// Personaje #1
+PERSONAJE:
+NOMBRE: Aragon
+CLASE: CHEF
+ATRIBUTO: Vida = 100
+ATRIBUTO: Fuerza = 100
+ATRIBUTO: Inteligencia = 60
+ATRIBUTO: Rabia = 85
+INVENTARIO: Espada larga, Escudo de roble, Pocion de curacion
+
+// Personaje #2
+PERSONAJE:
+NOMBRE: Mercy
+CLASE: Sanador
+ATRIBUTO: Curacion = 110
+INVENTARIO: Orbe sagrado, Vendas, Pocion de espiritu, Amuleto protector
